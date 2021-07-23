@@ -1,12 +1,14 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   R2Modman: {
     runningMigration: {
       needBackgroundWork: "An update to the manager has occurred and needs to do background work.",
       gameSelectSoon: "The option to select a game will appear once the work has completed.",
-    }
+    },
+    errors: {
+      error: "Error",
+      solution: "Suggestion",
+      close: "close",
+    },
   },
   GameSelectionScreen: {
     storeSelection: {

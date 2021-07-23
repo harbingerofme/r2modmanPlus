@@ -7,17 +7,17 @@
             <div class="modal-background" @click="closeErrorModal()"></div>
             <div class='modal-content'>
                 <div class='notification is-danger'>
-                    <h3 class='title'>Error</h3>
-                    <h5 class="title is-5">{{errorMessage}}</h5>
+                    <h3 class='title'>{{ $t('R2Modman.errors.error') }}</h3>
+                    <h5 class="title is-5">{{ errorMessage }}</h5>
                     <p>{{errorStack}}</p>
                     <div v-if="errorSolution !== ''">
                         <br/>
-                        <h5 class="title is-5">Suggestion</h5>
+                        <h5 class="title is-5">{{ $t('R2Modman.errors.solution')}}</h5>
                         <p>{{errorSolution}}</p>
                     </div>
                 </div>
             </div>
-            <button class="modal-close is-large" aria-label="close" @click="closeErrorModal()"></button>
+            <button class="modal-close is-large" :aria-label="`${$t('R2Modman.errors.close')}`" @click="closeErrorModal()"></button>
         </div>
 
     </div>
