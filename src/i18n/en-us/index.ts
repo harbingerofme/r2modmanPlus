@@ -10,6 +10,11 @@ export default {
       close: "close",
     },
   },
+  Navigation: {
+    launchModded: "Start modded",
+    //TODO: write all nav stuff
+    online: "Online"
+  },
   GameSelectionScreen: {
     storeSelection: {
       title: "Which store manages your game?",
@@ -27,6 +32,15 @@ export default {
     buttons: {
       confirm: "Select game",
       makeDefault: "Set as default"
+    },
+  },
+  Help: {
+    title: "Help",
+    subtitle: "Common problems and their potential solutions",
+    gettingStarted: {
+      title: "Getting started with installing mods",
+      howDownload: "Go to the \"@:Navigation.online\" tab, find a mod and hit download. It'll also download the dependencies saving you time.",
+      howStart: "Once you've installed the mods you'd like, click on \"@:Navigation.launchModded\" in the top left"
     },
   },
 };

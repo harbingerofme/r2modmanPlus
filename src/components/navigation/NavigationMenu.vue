@@ -19,7 +19,7 @@
             <aside class="menu">
                 <p class="menu-label">{{ activeGame.displayName }}</p>
                 <ul class="menu-list">
-                    <li><a href="#" @click="launchModded"><i class="fas fa-play-circle icon--margin-right"/>Start modded</a>
+                    <li><a href="#" @click="launchModded"><i class="fas fa-play-circle icon--margin-right"/>{{ $t('launchModded') }}</a>
                     </li>
                     <li>
                         <a href="#" @click="launchVanilla"><i class="far fa-play-circle icon--margin-right"/>Start
@@ -43,7 +43,7 @@
                         <a href="#" data-ref="online" @click="emitClick($event.target)"
                            class="tagged-link" :class="[view === 'online' ? 'is-active' : '']">
                             <i class="fas fa-globe tagged-link__icon icon--margin-right" data-ref="online" @click="emitClick($event.target)"/>
-                            <span class="tagged-link__content" data-ref="online" @click="emitClick($event.target)">Online</span>
+                            <span class="tagged-link__content" data-ref="online" @click="emitClick($event.target)">{{$t('Navigation.online')}}</span>
                             <span class="tag tagged-link__tag" :class="[{'is-link': view !== 'online'}]"
                                   data-ref="online" @click="emitClick($event.target)">{{thunderstoreModList.length}}</span>
                         </a>

@@ -23,12 +23,11 @@
             <div class="container margin-right">
                 <br/>
                 <div ref="General" v-if="activeTab === 'General'">
-                    <h2 class="title is-5">Getting started with installing mods</h2>
+                    <h2 class="title is-5">{{ $t('Help.gettingStarted.title')}}</h2>
                     <p>
-                        Go to the "Online" tab, find a mod, and hit download.
-                        It'll also download the dependencies saving you time.
+                        {{ $t('Help.gettingStarted.howDownload')}}
                     </p>
-                    <p>Once you've installed the mods you'd like, just click <strong>Start modded</strong> in the top left.</p>
+                    <p>{{ $t('Help.gettingStarted.howDownload')}}</p>
                     <hr/>
                     <h2 class='title is-5'>Slow game with mods / stuttering?</h2>
                     <p>
