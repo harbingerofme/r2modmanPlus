@@ -2,10 +2,10 @@
     <div>
         <modal v-show="showPlatformModal === true" :open="showPlatformModal" @close-modal="() => {showPlatformModal = false;}" class="z-max z-top">
             <template v-slot:title>
-                <p class='card-header-title'>Which store manages your game?</p>
+                <p class='card-header-title'>{{ $t('GameSelectionScreen.storeSelection.title') }}</p>
             </template>
             <template v-slot:body>
-                <p>Select a platform:</p>
+                <p>{{ $t('GameSelectionScreen.storeSelection.label') }}</p>
                 <div v-if="selectedGame !== null">
                     <div v-for="(platform, index) of selectedGame.storePlatformMetadata" :key="`${index}-${platform.storePlatform.toString()}`">
                         <input type="radio" :id="`${index}-${platform.storePlatform.toString()}`" :value="platform.storePlatform" v-model="selectedPlatform"/>
@@ -15,19 +15,19 @@
             </template>
             <template v-slot:footer>
                 <button class='button is-info' @click='selectPlatform'>
-                    Select platform
+                    {{ $t('GameSelectionScreen.storeSelection.confirm') }}
                 </button>
             </template>
         </modal>
         <hero
-            title="Game selection"
-            subtitle="Which game are you managing your mods for?"
+            :title="`${$t('GameSelectionScreen.hero.title')}`"
+            :subtitle="`${$t('GameSelectionScreen.hero.subtitle')}`"
             heroType="is-info"
         />
         <div class="notification is-warning is-square" v-if="runningMigration">
             <div class="container">
-                <p>An update to the manager has occurred and needs to do background work.</p>
-                <p>The option to select a game will appear once the work has completed.</p>
+                <p>{{ $t('R2Modman.runningMigration.needBackgroundWork') }}</p>
+                <p>{{ $t('R2Modman.runningMigration.gameSelectSoon') }}</p>
             </div>
         </div>
         <div class="columns">
@@ -40,8 +40,8 @@
                             <div class="level-item">
                                 <div class="card-header-title">
                                     <div class="input-group input-group--flex margin-right">
-                                        <label for="local-search" class="non-selectable">Search</label>
-                                        <input id="local-search" v-model='filterText' class="input margin-right" type="text" placeholder="Search for a game"/>
+                                        <label for="local-search" class="non-selectable">{{ $t('GameSelectionScreen.search.label') }}</label>
+                                        <input id="local-search" v-model='filterText' class="input margin-right" type="text" :placeholder="`${ $t('GameSelectionScreen.search.placeholder') }`"/>
                                     </div>
                                 </div>
                             </div>
@@ -68,21 +68,24 @@
                             <div class="level-item">
                                 <div class="card-header-title">
                                     <div class="input-group input-group--flex margin-right">
-                                        <label for="local-search" class="non-selectable">Search</label>
-                                        <input id="local-search" v-model='filterText' class="input margin-right" type="text" placeholder="Search for a game"/>
+                                        <label for="local-search" class="non-selectable">{{ $t('GameSelectionScreen.search.label') }}</label>
+                                        <input id="local-search" v-model='filterText' class="input margin-right" type="text" :placeholder="`${ $t('GameSelectionScreen.search.placeholder') }`"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="margin-right">
                                 <br/>
                                 <a class="button is-info"
-                                   :disabled="selectedGame === null && !this.runningMigration" @click="selectGame(selectedGame)">Select
-                                    game</a>
+                                   :disabled="selectedGame === null && !this.runningMigration"
+                                   @click="selectGame(selectedGame)"
+                                   >
+                                   {{ $t('GameSelectionScreen.buttons.confirm') }}
+                                   </a>
                             </div>
                             <div class="margin-right">
                                 <br/>
                                 <a class="button"
-                                   :disabled="selectedGame === null && !this.runningMigration" @click="selectDefaultGame(selectedGame)">Set as default</a>
+                                   :disabled="selectedGame === null && !this.runningMigration" @click="selectDefaultGame(selectedGame)">{{ $t('GameSelectionScreen.buttons.makeDefault') }}</a>
                             </div>
                             <div>
                                 <br/>
@@ -129,9 +132,9 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="absolute-center text-center">
-                                                                    <button class="button is-info" @click="selectGame(game)" :class="[{'is-disabled': selectedGame === null}]">Select game</button>
+                                                                    <button class="button is-info" @click="selectGame(game)" :class="[{'is-disabled': selectedGame === null}]">{{ $t('GameSelectionScreen.buttons.confirm') }}</button>
                                                                     <br/><br/>
-                                                                    <button class="button" @click="selectDefaultGame(game)">Set as default</button>
+                                                                    <button class="button" @click="selectDefaultGame(game)">{{ $t('GameSelectionScreen.buttons.makeDefault') }}</button>
                                                                 </div>
                                                             </div>
                                                         </div>
