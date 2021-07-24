@@ -19,7 +19,7 @@
             <aside class="menu">
                 <p class="menu-label">{{ activeGame.displayName }}</p>
                 <ul class="menu-list">
-                    <li><a href="#" @click="launchModded"><i class="fas fa-play-circle icon--margin-right"/>{{ $t('launchModded') }}</a>
+                    <li><a href="#" @click="launchModded"><i class="fas fa-play-circle icon--margin-right"/>{{ $t('Navigation.launchModded') }}</a>
                     </li>
                     <li>
                         <a href="#" @click="launchVanilla"><i class="far fa-play-circle icon--margin-right"/>Start
