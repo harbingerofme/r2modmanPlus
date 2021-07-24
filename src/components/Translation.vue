@@ -1,10 +1,10 @@
 <template>
     <span>
         <span v-for="(tag,index) in tags" :key="index">
-            <strong v-if="tag.type === RuleEnum.bold">
+            <strong v-if="tag.type === TranslationRule.bold">
                 {{ tag.text }}
             </strong>
-            <code v-else-if="tag.type === RuleEnum.code">
+            <code v-else-if="tag.type === TranslationRule.code">
                 {{ tag.text }}
             </code>
             <span v-else>
@@ -17,22 +17,20 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component, Prop } from 'vue-property-decorator'
-import Tag from '../providers/generic/i18n/Tag'
-import Formatter from '../providers/generic/i18n/Formatter';
-import {RuleEnum} from '../providers/generic/i18n/RuleEnum';
+import Tag from '../model/translation/Tag'
+import Formatter from '../r2mm/translation/Formatter';
+import {TranslationRule} from '../model/enums/TranslationRule';
 
 @Component
 export default class Translation extends Vue {
     @Prop({default: ''})
-    translationKey: string | undefined
+    translationKey?: string
 
-    private tags:Tag[]|undefined;
-    private RuleEnum: any = RuleEnum
+    private tags?: Tag[];
+    private TranslationRule: any = TranslationRule
 
     created(){
-        console.log('aaaa');
         this.tags = Formatter.$tf(this.translationKey as string);
     }
-
 }
 </script>

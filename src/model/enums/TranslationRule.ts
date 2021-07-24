@@ -1,4 +1,4 @@
-export enum RuleEnum {
+export enum TranslationRule {
     span,
     bold,
     code,

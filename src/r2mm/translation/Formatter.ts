@@ -1,17 +1,16 @@
-import Vue from 'vue'
 import  { i18n } from 'src/boot/i18n';
-import { RuleEnum } from './RuleEnum';
-import Tag from './Tag';
+import { TranslationRule } from '../../model/enums/TranslationRule';
+import Tag from '../../model/translation/Tag';
 
 class Rule {
-    public type:RuleEnum;
+    public type:TranslationRule;
     public tag:string;
     public formatOpen:string;
     public formatClose:string;
 
     public regexp:RegExp;
 
-    constructor(name: RuleEnum, tag:string, openingFormat: string, closingFormat: string| null = null) {
+    constructor(name: TranslationRule, tag:string, openingFormat: string, closingFormat: string| null = null) {
         this.type = name;
         this.tag = tag;
         this.formatOpen = openingFormat;
@@ -30,15 +29,15 @@ class Rule {
 export default class Formatter {
     private static rules: Rule[] = [
         //Match discord markdown
-        new Rule(RuleEnum.bold, "strong", "**"),
-        new Rule(RuleEnum.code, "code", "`"),
+        new Rule(TranslationRule.bold, "strong", "**"),
+        new Rule(TranslationRule.code, "code", "`"),
     ]
     
     
 
     public static $tf(key:string) : Tag[] {
         let text = i18n.t(key) as string; 
-        let elements = [new Tag(RuleEnum.span, text)];
+        let elements = [new Tag(TranslationRule.span, text)];
         Formatter.rules.forEach( rule=> {
             let copy: Tag[] = [];
             elements.forEach(tag => {
