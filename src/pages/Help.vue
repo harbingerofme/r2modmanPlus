@@ -25,25 +25,24 @@
                 <div ref="General" v-if="activeTab === 'General'">
                     <h2 class="title is-5">{{ $t('Help.gettingStarted.title')}}</h2>
                     <p>
-                        {{ $t('Help.gettingStarted.howDownload')}}
+                        <translation translationKey="Help.gettingStarted.howDownload"></translation>
                     </p>
-                    <p>{{ $t('Help.gettingStarted.howDownload')}}</p>
-                    <hr/>
-                    <h2 class='title is-5'>Slow game with mods / stuttering?</h2>
                     <p>
-                        This is likely due to a mod throwing errors.
-                        One solution is to attempt to disable half of your mods and check to see if the issue persists.
+                        <translation translationKey="Help.gettingStarted.howLaunchModded"></translation>
+                        </p>
+                    <hr/>
+                    <h2 class='title is-5'>{{$t('Help.slowGame.title')}}</h2>
+                    <p>
+                        {{$t('Help.slowGame.probableCause')}}
                         <br/>
-                        If the issue still remains then disable another half. Continue doing this until the issue is
-                        solved.
+                        {{$t('Help.slowGame.binarySearch')}}
                         <br/><br/>
-                        In the case of stuttering there may be optimization mods to help with this.
+                        {{$t('Help.slowGame.maybeOptimisationMods')}}
                     </p>
                     <hr/>
-                    <h2 class='title is-5'>Dedicated servers</h2>
+                    <h2 class='title is-5'>{{$t('Help.dedicatedServer.title')}}</h2>
                     <p>
-                        Dedicated servers aren't directly supported through the manager however a solution is to instead
-                        copy the contents of your profile folder into your dedicated server folder yourself.
+                        {{$t('Help.dedicatedServer.text')}}
                     </p>
                     <hr/>
                     <h2 class='title is-5'>Launching from Steam</h2>
@@ -102,7 +101,7 @@
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import NavigationMenuProvider from '../providers/components/loaders/NavigationMenuProvider';
     import Profile from '../model/Profile';
-    import {Hero, Link} from '../components/all';
+    import {Hero, Link, Translation} from '../components/all';
     import GameRunnerProvider from '../providers/generic/game/GameRunnerProvider';
     import R2Error from '../model/errors/R2Error';
     import Game from '../model/game/Game';
@@ -112,7 +111,8 @@
         components: {
             Link,
             NavigationMenu: NavigationMenuProvider.provider,
-            Hero
+            Hero,
+            Translation
         }
     })
     export default class Help extends Vue {
