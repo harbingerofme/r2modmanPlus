@@ -4,15 +4,13 @@ import Tag from '../../model/translation/Tag';
 
 class Rule {
     public type:TranslationRule;
-    public tag:string;
     public formatOpen:string;
     public formatClose:string;
 
     public regexp:RegExp;
 
-    constructor(name: TranslationRule, tag:string, openingFormat: string, closingFormat: string| null = null) {
-        this.type = name;
-        this.tag = tag;
+    constructor(type: TranslationRule, openingFormat: string, closingFormat: string| null = null) {
+        this.type = type;
         this.formatOpen = openingFormat;
         this.formatClose = closingFormat||openingFormat;
 
@@ -21,16 +19,26 @@ class Rule {
 
     //Source: https://stackoverflow.com/a/3561711
     //License: https://creativecommons.org/licenses/by-sa/4.0/
-    private escapeRegex(str: string) {
+    protected escapeRegex(str: string) {
         return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
+}
+
+class SingleTagRule extends Rule {
+    constructor(type: TranslationRule, format: string)
+    {
+        super(type,format);
+
+        this.regexp = new RegExp(`${this.escapeRegex(this.formatOpen)}`,"gi");
     }
 }
 
 export default class Formatter {
     private static rules: Rule[] = [
         //Match discord markdown
-        new Rule(TranslationRule.bold, "strong", "**"),
-        new Rule(TranslationRule.code, "code", "`"),
+        new Rule(TranslationRule.bold, "**"),
+        new Rule(TranslationRule.code, "`"),
+        new SingleTagRule(TranslationRule.newline, "\n"),
     ]
     
     
