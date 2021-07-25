@@ -45,12 +45,12 @@ export default {
     slowGame: {
       title: "Slow game with mods / stuttering?",
       probableCause: "This is likely due to a mod throwing errors.",
-      binarySearch: "One solution is to attempt to disable half of your mods and check to see if the issue persists. If the issue still remains then disable another half. Continue doing this until the issue is solved.",
+      binarySearch: "One solution is to attempt to disable half of your mods and check to see if the issue persists.\n If the issue still remains then disable another half. Continue doing this until the issue is solved.",
       maybeOptimisationMods: "In the case of stuttering there may be optimization mods to help with this.",
     },
     dedicatedServer: {
       title: "Dedicated servers",
-      text: "Dedicated servers aren't directly supported through the manager however a solution is to instead copy the contents of your profile folder into your dedicated server folder yourself.",
+      text: "Dedicated servers aren't directly supported through the manager.\n However, a solution is to instead copy the contents of your profile folder into your dedicated server folder yourself.",
     },
     launchFromSteam: {
       title: "",
