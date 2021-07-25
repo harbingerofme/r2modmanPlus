@@ -23,40 +23,36 @@
             <div class="container margin-right">
                 <br/>
                 <div ref="General" v-if="activeTab === 'General'">
-                    <h2 class="title is-5">{{ $t('Help.gettingStarted.title')}}</h2>
+                    <h2 class="title is-5"><translation translationKey="Help.gettingStarted.title"></translation></h2>
                     <p>
                         <translation translationKey="Help.gettingStarted.howDownload"></translation>
                     </p>
                     <p>
                         <translation translationKey="Help.gettingStarted.howLaunchModded"></translation>
-                        </p>
-                    <hr/>
-                    <h2 class='title is-5'>{{$t('Help.slowGame.title')}}</h2>
-                    <p>
-                        {{$t('Help.slowGame.probableCause')}}
-                        <br/>
-                        {{$t('Help.slowGame.binarySearch')}}
-                        <br/><br/>
-                        {{$t('Help.slowGame.maybeOptimisationMods')}}
                     </p>
                     <hr/>
-                    <h2 class='title is-5'>{{$t('Help.dedicatedServer.title')}}</h2>
+                    <h2 class='title is-5'><translation translationKey="Help.slowGame.title"></translation></h2>
                     <p>
-                        {{$t('Help.dedicatedServer.text')}}
+                        <translation translationKey="Help.slowGame.probableCause"></translation>
+                    <br/><br/>
+                        <translation translationKey="Help.slowGame.binarySearch"></translation>
+                        <br/><br/>
+                        <translation translationKey="Help.slowGame.maybeOptimisationMods"></translation>
                     </p>
                     <hr/>
-                    <h2 class='title is-5'>Launching from Steam</h2>
+                    <h2 class='title is-5'><translation translationKey="Help.dedicatedServer.title"></translation></h2>
                     <p>
-                        By design your experience by starting the game through Steam will be vanilla (un-modded).
+                        <translation translationKey="Help.dedicatedServer.text"></translation>
+                    </p>
+                    <hr/>
+                    <h2 class='title is-5'><translation translationKey="Help.launchFromSteam.title"></translation></h2>
+                    <p>
+                        <translation translationKey="Help.launchFromSteam.design"></translation>
                         <br/>
-                        You can change this yourself by passing <code>--doorstop-target "&lt;PATH&gt;"</code> as a game
-                        launch argument. This is however not recommend as it's an extremely manual approach.
+                        <translation translationKey="Help.launchFromSteam.howChange"></translation>
                         <br/><br/>
-                        Replace <code>&lt;PATH&gt;</code> with the path to the profile you'd like to launch.
-                        <br/><br/>
-                        Your current argument would be:
-                        <code v-if="doorstopTarget.length > 0">{{ doorstopTarget }}</code>
-                        <code v-else>These parameters will be available after installing BepInEx.</code>
+                        <translation v-if="doorstopTarget.length > 0" translationKey="Help.launchFromSteam.currentArgument1" :arguments="[doorstopTarget]"></translation>
+                        <translation v-else translationKey="Help.launchFromSteam.currentArgument1" :arguments="[$t('Help.launchFromSteam.argumentUnavailable')]" ></translation>
                     </p>
                 </div>
                 <div ref="Game won't start" v-if="activeTab === `Game won't start`">

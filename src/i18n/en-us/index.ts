@@ -53,10 +53,11 @@ export default {
       text: "Dedicated servers aren't directly supported through the manager.\n However, a solution is to instead copy the contents of your profile folder into your dedicated server folder yourself.",
     },
     launchFromSteam: {
-      title: "",
-      design: "",
-      howChange: "",
-      
+      title: "Launching from Steam",
+      design: "By design your experience by starting the game through Steam will be vanilla (un-modded).",
+      howChange: "You can change this yourself by passing `--doorstop-target \"<PATH>\"` as a game launch argument.\n This is however not recommend as it's an extremely manual approach.\n\n Replace `<PATH>` with the path to the profile you'd like to launch.",
+      currentArgument1: " Your current argument would be:\n`{0}`",
+      argumentUnavailable: "These parameters will be available after installing BepInEx.",
     },
   },
 };
