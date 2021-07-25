@@ -43,8 +43,13 @@ export default class Formatter {
     
     
 
-    public static $tf(key:string) : Tag[] {
-        let text = i18n.t(key) as string; 
+    public static $tf(key:string, args?: string[]) : Tag[] {
+        let text: string;
+        if(args) {
+            text = i18n.t(key, args) as string;
+        } else {
+          text = i18n.t(key) as string; 
+        }
         let elements = [new Tag(TranslationRule.span, text)];
         Formatter.rules.forEach( rule=> {
             let copy: Tag[] = [];

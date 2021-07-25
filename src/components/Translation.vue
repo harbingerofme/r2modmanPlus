@@ -27,11 +27,14 @@ export default class Translation extends Vue {
     @Prop({default: ''})
     translationKey?: string
 
+    @Prop({default: [] })
+    arguments?: string[];
+
     private tags?: Tag[];
     private TranslationRule: any = TranslationRule
 
     created(){
-        this.tags = Formatter.$tf(this.translationKey as string);
+        this.tags = Formatter.$tf(this.translationKey as string, this.arguments);
     }
 }
 </script>
