@@ -56,15 +56,15 @@
                     </p>
                 </div>
                 <div ref="Game won't start" v-if="activeTab === `Game won't start`">
-                    <h2 class='title is-5'>A red box appears when I try to start the game</h2>
-                    <p>Read the suggestion at the bottom of the red box.</p>
+                    <h2 class='title is-5'><translation translationKey="Help.noGameStart.redBox.title"></translation></h2>
+                    <p><translation translationKey="Help.noGameStart.redBox.readInstructions"></translation></p>
                     <hr/>
-                    <h2 class='title is-5'>I'm taken to the Steam store page</h2>
-                    <p>That's because you don't legally own the game. The manager only supports legal copies.</p>
+                    <h2 class='title is-5'><translation translationKey="Help.noGameStart.takenToSteam.title"></translation></h2>
+                    <p><translation translationKey="Help.noGameStart.takenToSteam.reason"></translation></p>
                     <hr/>
-                    <h2 class='title is-5'>A text window appears and closes immediately.</h2>
-                    <p>Try running the preloader fix on the Settings screen.</p>
-                    <p>If it persists, force exit Steam and start modded with Steam closed.</p>
+                    <h2 class='title is-5'><translation translationKey="Help.noGameStart.immediateClose.title"></translation></h2>
+                    <p><translation translationKey="Help.noGameStart.immediateClose.preloaderFix"></translation></p>
+                    <p><translation translationKey="Help.noGameStart.immediateClose.forceSteamClose"></translation></p>
                 </div>
                 <div ref="Mods not appearing" v-if="activeTab === 'Mods not appearing'">
                     <h2 class='title is-5'>Potential solutions</h2>

@@ -59,5 +59,25 @@ export default {
       currentArgument1: " Your current argument would be:\n`{0}`",
       argumentUnavailable: "These parameters will be available after installing BepInEx.",
     },
+    noGameStart: {
+      redBox: {
+        title: "A red box appears when I try to start the game",
+        readInstructions: "Read the suggestion at the bottom of the red box.",
+      },
+      takenToSteam: {
+        title: "I'm taken to the Steam store page",
+        reason: "That's because you don't legally own the game. The manager only supports legal copies.",
+      },
+      immediateClose:{
+        title:"A text window appears and closes immediately.",
+        preloaderFix: "Try running the preloader fix on the Settings screen.",
+        forceSteamClose: "If it persists, force exit Steam and start modded with Steam closed.",
+      }
+    },
+    updating: {
+      whenUpdate: "",
+      maybePrompt: "",
+      onError: "",
+    }
   },
 };
