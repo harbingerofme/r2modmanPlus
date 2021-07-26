@@ -1,6 +1,6 @@
 <template>
     <span :id="'t-'+translationKey">
-        <span v-for="(tag,index) in tags" :key="index">
+        <span v-for="(tag,index) in tags" :key="translationKey + '-'+ index">
             <strong v-if="tag.type === TranslationRule.bold">
                 {{ tag.text }}
             </strong>
@@ -30,11 +30,10 @@ export default class Translation extends Vue {
     @Prop({default: null })
     arguments?: string[];
 
-    private tags?: Tag[];
     private TranslationRule: any = TranslationRule
 
-    created(){
-        this.tags = Formatter.$tf(this.translationKey as string, this.arguments);
-    }
+    get tags() : Tag[] {
+            return Formatter.$tf(this.translationKey as string, this.arguments);
+        }
 }
 </script>
