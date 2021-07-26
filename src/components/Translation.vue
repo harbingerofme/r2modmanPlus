@@ -27,7 +27,7 @@ export default class Translation extends Vue {
     @Prop({default: ''})
     translationKey?: string
 
-    @Prop({default: [] })
+    @Prop({default: null })
     arguments?: string[];
 
     private tags?: Tag[];
