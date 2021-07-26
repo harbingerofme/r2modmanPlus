@@ -1,5 +1,5 @@
 <template>
-    <span>
+    <span :id="'t-'+translationKey">
         <span v-for="(tag,index) in tags" :key="index">
             <strong v-if="tag.type === TranslationRule.bold">
                 {{ tag.text }}
