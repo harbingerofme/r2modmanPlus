@@ -94,16 +94,16 @@
 
 <script lang="ts">
 
-    import { Component, Prop, Vue } from 'vue-property-decorator';
-    import NavigationMenuProvider from '../providers/components/loaders/NavigationMenuProvider';
-    import Profile from '../model/Profile';
-    import {Hero, Link, Translation} from '../components/all';
-    import GameRunnerProvider from '../providers/generic/game/GameRunnerProvider';
-    import R2Error from '../model/errors/R2Error';
-    import Game from '../model/game/Game';
-    import GameManager from '../model/game/GameManager';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import NavigationMenuProvider from '../providers/components/loaders/NavigationMenuProvider';
+import Profile from '../model/Profile';
+import { Hero, Link, Translation } from '../components/all';
+import GameRunnerProvider from '../providers/generic/game/GameRunnerProvider';
+import R2Error from '../model/errors/R2Error';
+import Game from '../model/game/Game';
+import GameManager from '../model/game/GameManager';
 
-    @Component({
+@Component({
         components: {
             Link,
             NavigationMenu: NavigationMenuProvider.provider,
