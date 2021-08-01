@@ -87,9 +87,17 @@ export default {
       },
     },
     updating: {
-      whenUpdate: "",
-      maybePrompt: "",
-      onError: "",
-    }
+      autoUpdateTitle: 'Auto-updates',
+      whenUpdate:
+        'The manager updates automatically on close assuming an update is available.\nUpdates are downloaded in the background.',
+      maybePrompt:
+        'You may receive a prompt to run //old_uninstaller// as an admin. This is the updater.',
+      onError:
+        'If a problem occurs with an update, download and run the latest installer.',
+      doNotWantTitle: "I don't want updates",
+      doNotWantDescription:
+        "On GitHub there is a portable version that doesn't auto update. You are however prompted that an\n" +
+        'update is available.',
+    },
   },
 };

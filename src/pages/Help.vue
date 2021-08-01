@@ -75,16 +75,14 @@
                     </p>
                 </div>
                 <div ref="Updating" v-if="activeTab === 'Updating'">
-                    <h2 class='title is-5'>Auto-updates</h2>
-                    <p>The manager updates automatically on close assuming an update is available.</p>
-                    <p>Updates are downloaded in the background.</p>
-                    <p>You may receive a prompt to run <i>old_uninstaller</i> as an admin. This is the updater.</p>
-                    <p>If a problem occurs with an update, download and run the latest installer.</p>
+                    <h2 class='title is-5'><translation translation-key='Help.updating.autoUpdateTitle'></translation> </h2>
+                    <p><translation translation-key='Help.updating.whenUpdate'></translation></p>
+                    <p><translation translation-key='Help.updating.onError'></translation></p>
+                    <p><translation translation-key='Help.updating.onError'></translation></p>
                     <hr/>
-                    <h2 class='title is-5'>I don't want updates</h2>
+                    <h2 class='title is-5'><translation translation-key='Help.updating.doNotWantTitle'></translation></h2>
                     <p>
-                        On GitHub there is a portable version that doesn't auto update. You are however prompted that an
-                        update is available.
+                        <translation translation-key='Help.updating.doNotWantDescription'></translation>
                     </p>
                 </div>
             </div>
