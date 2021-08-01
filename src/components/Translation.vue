@@ -17,10 +17,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator'
-import Tag from '../model/translation/Tag'
+import { Component, Prop } from 'vue-property-decorator';
+import Tag from '../model/translation/Tag';
 import Formatter from '../r2mm/translation/Formatter';
-import {TranslationRule} from '../model/enums/TranslationRule';
+import { TranslationRule } from '../model/enums/TranslationRule';
 
 @Component
 export default class Translation extends Vue {
