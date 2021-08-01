@@ -7,6 +7,9 @@
             <code v-else-if="tag.type === TranslationRule.code">
                 {{ tag.text }}
             </code>
+            <i v-else-if="tag.type === TranslationRule.italics">
+                {{ tag.text }}
+            </i>
             <br v-else-if="tag.type === TranslationRule.newline" />
             <span v-else>
                 {{ tag.text }}

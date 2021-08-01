@@ -48,6 +48,7 @@ export default class Formatter {
         //Match discord markdown
         new Rule(TranslationRule.bold, '**'),
         new Rule(TranslationRule.code, '`'),
+        new Rule(TranslationRule.italics, '//'),
         new SingleTagRule(TranslationRule.newline, '\n'),
     ];
 
